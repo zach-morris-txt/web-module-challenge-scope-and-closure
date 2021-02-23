@@ -42,7 +42,20 @@ Find the file `index.js` and complete the tasks.
 
 Edit the `ReadMe` file with your answers.
 
+
+
+
+
+
+
+
+
+
+
 1. In your own words, define closure (1-2 sentences).
+
+ANSWER: Closure is a situation formed when a function references that which is declared in it's parent. This function and all of the code within this relationship form the closure.
+
 2. Study the following code, then answer the questions below.
 
 ```js
@@ -64,8 +77,24 @@ dansRoll();
 ```
 
 a. Where is closure used in this code? How can you tell?
+
+ANSWER: The closure is formed between ${name} and ("Dan") ("Zoe"). The fact that name must reach outside of the function into the function expressions beyond to retrieve the values of "Dan" and "Zoe" indicates there is closure.
+
 b. Compare and contrast calling `dansRoll` the first and second time. What is always the same? What could change?
+
+ANSWER: Both rolls will generate a string literal in Dan's name. "Dan rolled a...". However, the value of "newRoll" has the opportunity to be different for each new roll; for each new calling of 'dansRoll'.
+
 c. What is the lexical scope of `newRoll`? 
+
+ANSWER: 'newRoll' is bound to the function 'personalDice'. It cannot be retrieved without personalDice considering function scope. 
+
+
+
+
+
+
+
+
 
 
 ### Task 3 - Stretch Goals
