@@ -28,12 +28,18 @@ console.log(processFirstItem(['foo','bar'],function(str){return str+str}));
   Study the code for counter1 and counter2, then answer the questions below.
   
   1. What is the difference between counter1 and counter2?
+  ANSWER: counter1 can be reused simply by creating new functions equal to counterMaker(). On the flip side, counter2 cannot be reused because the count increment
+  is declared in function -inaccessible to others. 
   
   2. Which of the two uses a closure? How can you tell?
+  ANSWER: counter2 uses closure. You can tell because "return count++;" requires the function to look outside of itself to find the variable "let count = 0;".
   
   3. In what scenario would the counter1 code be preferable? In what scenario would 
      counter2 be better?  
-*/
+  ANSWER: counter1 is useful for when you need to have multiple things increment as you can set them to counterMaker.
+  counter2 is useful for when you want to further manipulate "count" because it is left outside the function and therefore global.
+
+     */
 
 // counter1 code
 function counterMaker() {
@@ -64,6 +70,7 @@ NOTE: This will be a callback function for the tasks below
 
 function inning(/*Code Here*/){
     /*Code Here*/
+    return Math.floor(Math.random() * Math.floor(2));
 }
 
 
@@ -80,9 +87,30 @@ Use the finalScore function below to do the following:
   "Away": 5
 }
 */ 
-
-function finalScore(/*code Here*/){
+let inningTotal = 9;
+function finalScore(/*code Here*/inning, inningTotal){
   /*Code Here*/
+  const teamsObject = {};
+
+  function currentScores(inningCB, baseballCB){
+
+    let homeScore = 0;
+    let awayScore = 0;
+
+    for(let i = 0; i < 9; i++){
+      const currentScore = baseballCB(inningCB);
+      homeScore = homeScore + currentScore.Home;
+      awayScore = awayScore + currentScore.Away;
+
+
+    }
+    function newScore(inningCB){
+      return {
+        Home: inningCB(),
+        Away: inningCB(),
+      }
+    }
+  }
 }
 
 /* ⚾️⚾️⚾️ Task 4: getInningScore() ⚾️⚾️⚾️
